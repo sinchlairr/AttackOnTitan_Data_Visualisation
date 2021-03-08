@@ -1,0 +1,320 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="styles.css"/> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+      body{
+        background-color: #294023;
+      }
+      .line1{
+        z-index: 100;
+        position: absolute;
+        color: rgb(31, 46, 37);
+        background-color: rgb(255,255,255,0.4);
+        padding: 7px;
+        font-size: 37px;
+        font-family: 'Linotext';
+        border-radius: 15px;
+        left: 2%;
+        top: 3%;
+
+      }
+      
+      .line2{
+        z-index: 100;
+        position: absolute;
+        color: rgb(31, 46, 37);
+        background-color: rgb(255,255,255,0.4);
+        padding: 7px;
+        font-size: 37px;
+        font-family: 'Linotext';
+        border-radius: 15px;
+        left: 2%;
+        top: 10%;
+
+      }
+    </style>
+
+</head>
+<body>
+
+
+  <h1 class="line1">Drag to Explore</h1>
+  <h1 class="line2">Click on Character Name</h1>
+    <embed name="GoodEnough" src="music/sasageyo.mp3" loop="false" hidden="true" autostart="true">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script> -->
+<!-- 
+    <div class="text-box">
+        <div class="heading">To infinity and Beyond</div>
+        <div class="button-wrapper">
+            <div class="button">Learn More</div>
+            <div class="button">Contact Us</div>
+        </div>
+    </div> -->
+    <script src="libraries/threecode.js"></script>
+    <script src="libraries/OrbitControls.js"></script>
+    <script src="libraries/GLTFLoader.js"></script>
+    <script src="libraries/threexdomevents.js"></script>
+    <script src="libraries/aot_text.js"></script>
+    <script src="libraries/vanilla.tilt.js"></script>
+    <!-- <script src="aot_bar.js"></script> -->
+
+    <!-- <h1 id="txt">KNOW YOUR AOT CHARACTER</h1> -->
+
+<!-- 
+    <canvas id='c' width=600 height=600 >
+        
+    </canvas>
+    <img src="levi.png" alt="" id="dz">
+    <script src='script.js'></script> -->
+    <!-- <script src="d3.js"></script> -->
+    <!-- <script src="https://threejs.org/examples/jsm/controls/OrbitControls.js"></script> -->
+
+    <script>
+   
+
+    let scene, camera, rederer;
+    function init() {
+    scene= new THREE.Scene();
+
+    camera= new THREE.PerspectiveCamera(55,window.innerWidth/window.innerHeight,45,3000);
+    camera.position.set(-900,-200,0);
+    // camera.rotation.x=0.2;
+
+    renderer= new THREE.WebGLRenderer({antialias: true});
+    renderer.setSize(window.innerWidth,window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+
+    
+    // scene.add(loadr);
+    let controls = new THREE.OrbitControls(camera, renderer.domElement );
+    controls.addEventListener('change',renderer);
+    controls.minDistance=500;
+    controls.maxDistance=1500;
+    let materialArray=[];
+    let texture_ft= new THREE.TextureLoader().load('imgs/aotbk.jpg');
+    let texture_up= new THREE.TextureLoader().load('imgs/aotsky.png');
+    let texture_bk= new THREE.TextureLoader().load('imgs/aotbk.jpg');
+    let texture_lf= new THREE.TextureLoader().load('imgs/aotbk.jpg');
+    let texture_rt= new THREE.TextureLoader().load('imgs/aotbk.jpg');
+    let texture_dn= new THREE.TextureLoader().load('imgs/aot_land.jpg');
+
+    materialArray.push(new THREE.MeshBasicMaterial({map:texture_ft}));
+    materialArray.push(new THREE.MeshBasicMaterial({map:texture_bk}));
+    materialArray.push(new THREE.MeshBasicMaterial({map:texture_up}));
+    materialArray.push(new THREE.MeshBasicMaterial({map:texture_dn}));
+    materialArray.push(new THREE.MeshBasicMaterial({map:texture_rt}));
+    materialArray.push(new THREE.MeshBasicMaterial({map:texture_lf}));
+   
+    for (let i=0;i<6;i++)
+        materialArray[i].side=THREE.BackSide;
+   
+    let skyboxGeo= new THREE.BoxGeometry(2000,2000,2000);
+    let skybox= new THREE.Mesh(skyboxGeo,materialArray);
+    scene.add(skybox);
+    var abint = new THREE.AmbientLight(0x999999);
+        scene.add(abint);
+
+        // light = new THREE.PointLight(0xc4c4c4,10);
+        // light.position.set(0,300,500);
+        // scene.add(light);
+        light2 = new THREE.PointLight(0xc4c4c4,1);
+        light2.position.set(500,100,0);
+        scene.add(light2);
+        light3 = new THREE.PointLight(0xc4c4c4,1);
+        light3.position.set(0,100,-500);
+        scene.add(light3);
+        // light4 = new THREE.PointLight(0xc4c4c4,10);
+        // light4.position.set(-500,300,500);
+        // scene.add(light4);
+    let loader = new THREE.GLTFLoader();
+        loader.load('mika/scene.gltf', function(gltf){
+          car = gltf.scene.children[0];
+          car.scale.set(50,50,50);
+        //   car.position.set(2500,2000,2000);
+        car.position.set(-300,100,10);
+          const domEvents= new THREEx.DomEvents(camera,renderer.domElement);
+     domEvents.addEventListener(car,'click', event=>{
+        // if (!sphereclicked){
+        // material.wireframe=false;
+        // sphereclicked= true;}
+        // else{
+        //     material.wireframe=true;
+        //     sphereclicked=false;
+        // }
+        location.href = "zeke.html";
+    });
+        //   scene.add(gltf.scene);
+        //   animate();
+        });
+        
+        
+        loader.load('beast2/scene.gltf', function(gltf){
+          car = gltf.scene.children[0];
+          car.scale.set(3,3,3);
+        //   car.position.set(2500,2000,2000);
+        car.position.set(100,-800,400);
+        car.rotation.z=45;
+          const domEvents= new THREEx.DomEvents(camera,renderer.domElement);
+     domEvents.addEventListener(car,'click', event=>{
+        // if (!sphereclicked){
+        // material.wireframe=false;
+        // sphereclicked= true;}
+        // else{
+        //     material.wireframe=true;
+        //     sphereclicked=false;
+        // }
+        location.href = "zeke_main.html";
+    });
+          scene.add(gltf.scene);
+        //   animate();
+        }); 
+        
+        
+        loader.load('stone/scene.gltf', function(gltf){
+          car = gltf.scene.children[0];
+          car.scale.set(0.5,0.5,0.5);
+        //   car.position.set(2500,2000,2000);
+        car.position.set(-600,400,1000);
+        car.rotation.z=45;
+          const domEvents= new THREEx.DomEvents(camera,renderer.domElement);
+     domEvents.addEventListener(car,'click', event=>{
+        // if (!sphereclicked){
+        // material.wireframe=false;
+        // sphereclicked= true;}
+        // else{
+        //     material.wireframe=true;
+        //     sphereclicked=false;
+        // }
+        location.href = "aot_main.html";
+    });
+          scene.add(gltf.scene);
+        //   animate();
+        });
+
+
+        loader.load('eren2/scene.gltf', function(gltf){
+          car = gltf.scene.children[0];
+          car.scale.set(0.2,0.2,0.2);
+        //   car.position.set(2500,2000,2000);
+        car.position.set(0,-100,-300);
+          const domEvents= new THREEx.DomEvents(camera,renderer.domElement);
+     domEvents.addEventListener(car,'click', event=>{
+        // if (!sphereclicked){
+        // material.wireframe=false;
+        // sphereclicked= true;}
+        // else{
+        //     material.wireframe=true;
+        //     sphereclicked=false;
+        // }
+        location.href = "eren_main.html";
+    });
+          scene.add(gltf.scene);
+        //   animate();
+        });
+
+
+        
+    
+
+
+        loader.load('armor/scene.gltf', function(gltf){
+          car = gltf.scene.children[0];
+        //   car = gltf.scene.children[1];
+        //   console.log(gltf.scene.children.length);
+        //   car.transpirancy=false;
+          car.scale.set(13,13,13);
+        //   car.position.set(2500,2000,2000);
+        car.position.set(-400,-300,-600);
+        // car.color="red";
+          const domEvents= new THREEx.DomEvents(camera,renderer.domElement);
+     domEvents.addEventListener(car,'click', event=>{
+        // if (!sphereclicked){
+        // material.wireframe=false;
+        // sphereclicked= true;}
+        // else{
+        //     material.wireframe=true;
+        //     sphereclicked=false;
+        // }
+        // location.href = "scatter.html";
+    });
+        //   scene.add(gltf.scene);
+        //   animate();
+        });
+
+
+   var cube= new THREE.BoxGeometry(1,1,1);
+   var cube_mater=[
+       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'main_screen/armin.png' ), side: THREE.DoubleSide,transparent: true}),
+   ]
+
+    var mater= new THREE.MeshFaceMaterial(cube_mater);
+    var c= new THREE.Mesh(cube,mater);
+    var domEvents= new THREEx.DomEvents(camera,renderer.domElement);
+     domEvents.addEventListener(c,'click', event=>{
+      location.href = "armin.html";
+     });
+    c.scale.set(500,500,500);
+    c.position.set(400,-100,-200);
+    c.rotation.y=45;
+    scene.add(c);
+    
+var cube= new THREE.BoxGeometry(1,1,1);
+   var cube_mater=[0,0,0,0,
+       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'main_screen/mikasa2d.png' ), side: THREE.DoubleSide,transparent: true}),
+   ]
+
+    var mater= new THREE.MeshFaceMaterial(cube_mater);
+    var c= new THREE.Mesh(cube,mater);
+    c.scale.set(500,500,500);
+    c.position.set(-450,100,-300);
+    // domEvents.addEventListener(c,'click', event=>{
+    //   location.href = "aot_main.html";
+    //  });
+
+    c.userData = { URL: "aot_main.html"}
+    // c.rotation.x=90;
+    scene.add(c);
+    
+    
+    var cube= new THREE.BoxGeometry(1,1,1);
+   var cube_mater=[0,0,0,0,
+       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'main_screen/levi.png' ), side: THREE.DoubleSide,transparent: true}),
+   ]
+
+    var mater= new THREE.MeshFaceMaterial(cube_mater);
+    var c= new THREE.Mesh(cube,mater);
+    c.scale.set(500,500,500);
+    c.position.set(400,250,-700);
+    // c.rotation.y=90;
+    scene.add(c);
+
+
+    animate();
+
+    }
+
+    function animate(){
+        camera.rotation.y-=0.001;
+        // console.log(camera.rotation.y);
+        
+        // camera.position.x+=0.1;
+        renderer.render(scene,camera);
+        requestAnimationFrame(animate);
+    }
+
+    init();
+
+
+    </script>
+
+    
+</body>
+</html>
