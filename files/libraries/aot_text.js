@@ -1,7 +1,7 @@
 
     const loadr = new THREE.FontLoader();
 
-loadr.load( 'aotfont.json', function ( font ) {
+loadr.load( 'files/libraries/aotfont.json', function ( font ) {
 
 	const geometry = new THREE.TextBufferGeometry( "Attack On Titans", {
 		font: font,
@@ -26,7 +26,7 @@ loadr.load( 'aotfont.json', function ( font ) {
     
 } );
 
-loadr.load( 'aotfont.json', function ( font ) {
+loadr.load( 'files/libraries/aotfont.json', function ( font ) {
 
 const geometry = new THREE.TextBufferGeometry( "Attack On Titans", {
     font: font,
@@ -77,7 +77,7 @@ scene.add(fontmesh);
 
 // } );
 
-loadr.load( 'aotfont.json', function ( font ) {
+loadr.load( 'files/libraries/aotfont.json', function ( font ) {
 
 const geometry = new THREE.TextBufferGeometry( "Eren Yeagar", {
     font: font,
@@ -115,7 +115,7 @@ scene.add(fontmesh);
 
 } );
 
-loadr.load( 'aotfont.json', function ( font ) {
+loadr.load( 'files/libraries/aotfont.json', function ( font ) {
 
 const geometry = new THREE.TextBufferGeometry( "Armin Arlert", {
     font: font,
@@ -154,7 +154,7 @@ scene.add(fontmesh);
 } );
 
 
-loadr.load( 'aotfont.json', function ( font ) {
+loadr.load( 'files/libraries/aotfont.json', function ( font ) {
 
 const geometry = new THREE.TextBufferGeometry( "Levi Ackerman", {
     font: font,
@@ -192,7 +192,7 @@ scene.add(fontmesh);
 
 } );
 
-loadr.load( 'aotfont.json', function ( font ) {
+loadr.load( 'files/libraries/aotfont.json', function ( font ) {
 
 const geometry = new THREE.TextBufferGeometry( "Zeke Yeager", {
     font: font,
@@ -233,7 +233,7 @@ scene.add(fontmesh);
 } );
 
 
-loadr.load( 'aotfont.json', function ( font ) {
+loadr.load( 'files/libraries/aotfont.json', function ( font ) {
 
 const geometry = new THREE.TextBufferGeometry( "Mikasa Ackerman", {
     font: font,
