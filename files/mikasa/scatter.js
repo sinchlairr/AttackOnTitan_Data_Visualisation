@@ -86,7 +86,7 @@ var margin_S = {top: 10, right: 30, bottom: 30, left: 60},
       
 
 //Read the data
-d3.csv("mikasa/sample.csv", function(data) {
+d3.csv("sample.csv", function(data) {
 
   // Add X axis
   var x_s = d3.scaleLinear()

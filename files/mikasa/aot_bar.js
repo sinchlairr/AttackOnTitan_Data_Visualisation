@@ -28,7 +28,7 @@ const data2=[
 ]
 
 var color = d3.scaleOrdinal( ).range(["#FFECCF2d", "#6a040f", "#6F553F8d","#2940238d","#4035358d"]);
-var img = d3.scaleOrdinal( ).range(["imgs/ereh2.png", "mikasa/mikasa1.png", "imgs/armin2.png", "imgs/levi.png", "imgs/beast.png"]);
+var img = d3.scaleOrdinal( ).range(["imgs/ereh2.png", "imgs/mikasa1.png", "imgs/armin2.png", "imgs/levi.png", "imgs/beast.png"]);
  
  // set the dimensions and margin_bs of the graph
  var margin_b = {top: 50, right: 30, bottom: 70, left: 60},
