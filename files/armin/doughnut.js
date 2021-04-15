@@ -8,7 +8,7 @@ new Chart(document.getElementById("doughnut-chart"), {
           backgroundColor: [        '#1D0E0B',
           '#7c0509',
           '#774023'],
-          data: [2,6,70]
+          data: [2478,5267,734]
         }
       ]
     },

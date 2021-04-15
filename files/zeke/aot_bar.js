@@ -27,7 +27,7 @@ const data2=[
     
 ]
 
-var color = d3.scaleOrdinal( ).range(["#FFECCF2d", "#6a040f3d", "#6d560f8d","#2940238d","#673911"]);
+var color = d3.scaleOrdinal( ).range(["#FFECCF2d", "#6a040f", "#6F553F8d","#2940238d","#4035358d"]);
 var img = d3.scaleOrdinal( ).range(["imgs/ereh2.png", "imgs/mikasa1.png", "imgs/armin2.png", "imgs/levi.png", "imgs/beast.png"]);
  
  // set the dimensions and margin_bs of the graph
@@ -51,7 +51,7 @@ var img = d3.scaleOrdinal( ).range(["imgs/ereh2.png", "imgs/mikasa1.png", "imgs/
    .padding(0.2);
  svg_b.append("g")
    .attr("transform", "translate(0," + height_b + ")")
-   .call(d3.axisBottom(x_b)).attr('stroke-width', '5px').attr('font-size', '15px').attr('font-weight', 'bold');
+   .call(d3.axisBottom(x_b)).attr('stroke-width', '5px').attr('font-size', '15px').attr('font-weight', 'bold')
  
  // Add Y axis
  var y_b = d3.scaleLinear()
@@ -59,8 +59,7 @@ var img = d3.scaleOrdinal( ).range(["imgs/ereh2.png", "imgs/mikasa1.png", "imgs/
    .range([ height_b, 0]);
  svg_b.append("g")
    .attr("class", "myYaxis")
-   .call(d3.axisLeft(y_b))
-   .attr('stroke-width', '5px');
+   .call(d3.axisLeft(y_b)).attr('stroke-width', '5px');
  
  // A function that create / update the plot for a given variable:
  function update_b(data) {

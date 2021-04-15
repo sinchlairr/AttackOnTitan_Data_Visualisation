@@ -45,13 +45,10 @@
 
   <div class='spinner-wrapper'>
     <div class="spinner"></div>
-    <h1 id="text">Chant SHINZO SASAGEYO to make it load faster..</h1>
+    <h1 id="text">sing Mystery of love to make it load faster..</h1>
 </div>
 
-
-  <h1 class="line1">Drag to Explore</h1>
-  <h1 class="line2">Click on Character Name</h1>
-    <embed name="GoodEnough" src="files/music/sasageyo.mp3" loop="false" hidden="true" autostart="true">
+    <embed name="GoodEnough" src="files/music/dhai.mp3" loop="false" hidden="true" autostart="true">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script> -->
 <!-- 
@@ -116,12 +113,12 @@ window.addEventListener('load', function () {
     controls.minDistance=500;
     controls.maxDistance=1500;
     let materialArray=[];
-    let texture_ft= new THREE.TextureLoader().load('files/imgs/aotbk.jpg');
-    let texture_up= new THREE.TextureLoader().load('files/imgs/aotsky.png');
-    let texture_bk= new THREE.TextureLoader().load('files/imgs/aotbk.jpg');
-    let texture_lf= new THREE.TextureLoader().load('files/imgs/aotbk.jpg');
-    let texture_rt= new THREE.TextureLoader().load('files/imgs/aotbk.jpg');
-    let texture_dn= new THREE.TextureLoader().load('files/imgs/aot_land.jpg');
+    let texture_ft= new THREE.TextureLoader().load('files/imgs/wall1.png');
+    let texture_up= new THREE.TextureLoader().load('files/imgs/wall2.png');
+    let texture_bk= new THREE.TextureLoader().load('files/imgs/wall3.png');
+    let texture_lf= new THREE.TextureLoader().load('files/imgs/wall4.png');
+    let texture_rt= new THREE.TextureLoader().load('files/imgs/wall5.png');
+    let texture_dn= new THREE.TextureLoader().load('files/imgs/wall6.png');
 
     materialArray.push(new THREE.MeshBasicMaterial({map:texture_ft}));
     materialArray.push(new THREE.MeshBasicMaterial({map:texture_bk}));
@@ -153,71 +150,7 @@ window.addEventListener('load', function () {
         // scene.add(light4);
         
         let loader = new THREE.GLTFLoader();
-        loader.load('files/beast2/scene.gltf', function(gltf){
-          car = gltf.scene.children[0];
-          car.scale.set(3,3,3);
-        //   car.position.set(2500,2000,2000);
-        car.position.set(100,-800,400);
-        car.rotation.z=45;
-          const domEvents= new THREEx.DomEvents(camera,renderer.domElement);
-     domEvents.addEventListener(car,'click', event=>{
-        // if (!sphereclicked){
-        // material.wireframe=false;
-        // sphereclicked= true;}
-        // else{
-        //     material.wireframe=true;
-        //     sphereclicked=false;
-        // }
-        // location.href = "files/zeke/index.html";
-    });
-          scene.add(gltf.scene);
-        //   animate();
-        }); 
         
-        
-        loader.load('files/stone/scene.gltf', function(gltf){
-          car = gltf.scene.children[0];
-          car.scale.set(0.5,0.5,0.5);
-        //   car.position.set(2500,2000,2000);
-        car.position.set(-600,400,1000);
-        car.rotation.z=45;
-          const domEvents= new THREEx.DomEvents(camera,renderer.domElement);
-     domEvents.addEventListener(car,'click', event=>{
-        // if (!sphereclicked){
-        // material.wireframe=false;
-        // sphereclicked= true;}
-        // else{
-        //     material.wireframe=true;
-        //     sphereclicked=false;
-        // }
-        // location.href = "files/.html";
-    });
-          scene.add(gltf.scene);
-        //   animate();
-        });
-
-
-        loader.load('files/eren2/scene.gltf', function(gltf){
-          car = gltf.scene.children[0];
-          car.scale.set(0.2,0.2,0.2);
-        //   car.position.set(2500,2000,2000);
-        car.position.set(0,-100,-300);
-          const domEvents= new THREEx.DomEvents(camera,renderer.domElement);
-     domEvents.addEventListener(car,'click', event=>{
-        // if (!sphereclicked){
-        // material.wireframe=false;
-        // sphereclicked= true;}
-        // else{
-        //     material.wireframe=true;
-        //     sphereclicked=false;
-        // }
-        location.href = "files/eren/index.html";
-    });
-          scene.add(gltf.scene);
-        //   animate();
-        });
-
-
         
     
 
@@ -226,8 +159,8 @@ window.addEventListener('load', function () {
 
 
    var cube= new THREE.BoxGeometry(1,1,1);
-   var cube_mater=[
-       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'files/main_screen/armin.png' ), side: THREE.DoubleSide,transparent: true}),
+   var cube_mater=[0,
+       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'files/imgs/dhairya3.png' ), side: THREE.DoubleSide,transparent: true}),
    ]
 
     var mater= new THREE.MeshFaceMaterial(cube_mater);
@@ -236,20 +169,20 @@ window.addEventListener('load', function () {
      domEvents.addEventListener(c,'click', event=>{
       location.href = "armin.html";
      });
-    c.scale.set(500,500,500);
-    c.position.set(400,-100,-200);
-    c.rotation.y=45;
+    c.scale.set(1000,1000,1000);
+    c.position.set(1200,-400,-100);
+    c.rotation.y=0;
     scene.add(c);
     
 var cube= new THREE.BoxGeometry(1,1,1);
-   var cube_mater=[0,0,0,0,
-       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'files/main_screen/mikasa2d.png' ), side: THREE.DoubleSide,transparent: true}),
+   var cube_mater=[0,
+       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'files/imgs/dhairya1.png' ), side: THREE.DoubleSide,transparent: true}),
    ]
 
     var mater= new THREE.MeshFaceMaterial(cube_mater);
     var c= new THREE.Mesh(cube,mater);
-    c.scale.set(500,500,500);
-    c.position.set(-450,100,-300);
+    c.scale.set(1000,1000,1000);
+    c.position.set(-250,-400,-100);
     // domEvents.addEventListener(c,'click', event=>{
     //   location.href = "aot_main.html";
     //  });
@@ -261,13 +194,25 @@ var cube= new THREE.BoxGeometry(1,1,1);
     
     var cube= new THREE.BoxGeometry(1,1,1);
    var cube_mater=[0,0,0,0,
-       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'files/main_screen/levi.png' ), side: THREE.DoubleSide,transparent: true}),
+       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'files/imgs/dhairya2.png' ), side: THREE.DoubleSide,transparent: true}),
    ]
 
     var mater= new THREE.MeshFaceMaterial(cube_mater);
     var c= new THREE.Mesh(cube,mater);
-    c.scale.set(500,500,500);
-    c.position.set(400,250,-700);
+    c.scale.set(700,1000,700);
+    c.position.set(50,-600,-1100);
+    // c.rotation.y=90;
+    scene.add(c);
+    
+  var cube= new THREE.BoxGeometry(1,1,1);
+   var cube_mater=[0,0,0,0,
+       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load( 'files/imgs/dhairya4.png' ), side: THREE.DoubleSide,transparent: true}),
+   ]
+
+    var mater= new THREE.MeshFaceMaterial(cube_mater);
+    var c= new THREE.Mesh(cube,mater);
+    c.scale.set(700,1000,1400);
+    c.position.set(50,-200,-10);
     // c.rotation.y=90;
     scene.add(c);
 

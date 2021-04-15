@@ -62,14 +62,14 @@ html{
 .spinner:before {
     width: 100%;
     height: 100%;
-    background-image:linear-gradient(90deg, #7f5539 0%,#b08968 100% );
+    background-image:linear-gradient(90deg, #39447f 0%,#c0b5f1 100% );
     animation: spin 3s infinite linear;
 }
 .spinner:after {
     width: 90%;
     height: 90%;
     /* background-color: #344e41; */
-    background-image: url('files/imgs/img3.jpg');
+    background-image: url('files/imgs/dhai2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     top: 50%;
