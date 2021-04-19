@@ -1,14 +1,14 @@
 new Chart(document.getElementById("doughnut-chart"), {
     type: 'doughnut',
     data: {
-      labels: ["Solo", "Assist", "Humans"],
+      labels: ["Solo", "Assist", "Titans"],
       datasets: [
         {
           label: "Population (millions)",
           backgroundColor: [        '#1D0E0B',
           '#7c0509',
           '#774023'],
-          data: [2478,5267,734]
+          data: [250,300,0]
         }
       ]
     },
